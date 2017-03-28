@@ -10,7 +10,7 @@ import { Segment } from './segment';
 export class SearchComponent {
 
   sentence = 'Here are the segments we found';
-  segmentsData: [Segment]= [{
+  segmentsData: Segment[] = [{
     segmentLongName: 'Test Segment',
     segmentId: 123456,
     aceId: 456789,

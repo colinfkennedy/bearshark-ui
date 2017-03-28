@@ -10,7 +10,7 @@ import { Segment } from './segment';
 
 export class SearchResultsComponent {
 
-    @Input()  segmentsData: [Segment];
+    @Input()  segmentsData: Segment[];
     @Input() sentence: string;
 
 }

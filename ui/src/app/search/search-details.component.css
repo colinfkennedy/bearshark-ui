@@ -1,0 +1,27 @@
+.detail-view {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+.detail-view .closeDetailView {
+    float: right;
+}
+
+.detail-view .closeDetailView .closeImage {
+    width: 20px;
+    height: 20px;
+}
+
+.detail-view .detail-header .segment-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.detail-view .detail-row * {
+    height: 300px;
+    width: 300px;
+    display: inline-block;
+    margin: 15px 30px;
+}
