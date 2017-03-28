@@ -351,9 +351,9 @@ a.dashboard-link span {
     border-right: 1px solid #7d7d7d;
     color: #fff;
     font-size: 24px;
-    height: 17px;
+    height: 54px;
     letter-spacing: normal;
-    width: 21px;
+    width: 56px;
 }
 .navbar-inverse .navbar-right li a {
     font-size: 13px;
@@ -548,4 +548,12 @@ a.dashboard-link span {
     margin-top: 0;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+}
+
+a:hover, a:focus {
+    cursor: pointer;
+}
+
+.navbar-inverse .navbar-right li a {
+    padding: 18px 25px 18px 5px;
 }

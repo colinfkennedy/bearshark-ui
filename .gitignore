@@ -3,10 +3,10 @@ node_modules
 jspm_packages
 npm-debug.log
 debug.log
-src/**/*.js
-!src/systemjs.config.extras.js
-!src/systemjs.config.js
-!src/systemjs-angular-loader.js
+ui/src/**/*.js
+!ui/src/systemjs.config.extras.js
+!ui/src/systemjs.config.js
+!ui/src/systemjs-angular-loader.js
 *.js.map
 e2e/**/*.js
 e2e/**/*.js.map
