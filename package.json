@@ -1,7 +1,7 @@
 {
-  "name": "angular-quickstart",
+  "name": "bearshark-ui",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "UI for Bearshark search",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp build:watch",

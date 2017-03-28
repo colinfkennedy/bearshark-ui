@@ -1,0 +1,28 @@
+<div class="search-results" ng-show="showSearchResults">
+  <div class="sentence">{{sentence}}</div>
+  <br/>
+  <table class="table table-bordered">
+    <thead class="thead-inverse">
+    <tr>
+      <th>Segment Name</th>
+      <th>Segment ID</th>
+      <th>ACE ID</th>
+      <th>Impressions</th>
+      <th>Data Revenue</th>
+      <th>Revenue</th>
+      <th>Segment Cost - $</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="segment in segmentsData">
+      <td ><a ng-click="vm.showDetailView($index)">{{ segment.segmentLongName }}</a></td>
+      <td>{{ segment.segmentId }}</td>
+      <td>{{ segment.aceId }}</td>
+      <td>{{ segment.impressions }}</td>
+      <td>{{ segment.dataRevenue }}</td>
+      <td>{{ segment.revenue }}</td>
+      <td>{{ segment.price }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
