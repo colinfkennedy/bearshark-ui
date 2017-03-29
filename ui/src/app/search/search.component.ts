@@ -1,23 +1,23 @@
-import { Component } from '@angular/core';
+import { Component }      from '@angular/core';
 
-import { Segment } from './segment';
+import { Segment }        from './segment';
+import { SearchService }  from '../service/search.service';
 
 @Component({
   selector: 'bearshark-search',
   templateUrl: './search.component.html',
-  styleUrls: [ './search.component.css' ]
+  styleUrls: [ './search.component.css' ],
+  providers: [SearchService]
 })
 export class SearchComponent {
-
+  segments: Segment[];
   sentence = 'Here are the segments we found';
-  segmentsData: Segment[] = [{
-    segmentLongName: 'Test Segment',
-    segmentId: 123456,
-    aceId: 456789,
-    impressions: 100,
-    dataRevenue: 5555,
-    revenue: 6666,
-    price: 2
-  }];
 
+  constructor(
+    private searchService: SearchService
+  ) {}
+  
+  search(term: string): void {
+    this.searchService.search(term).then(segments => this.segments = segments);
+  }
 }

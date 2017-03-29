@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges} from '@angular/core';
 
 import { Segment } from './segment';
+import { SearchService }  from '../service/search.service';
 
 @Component({
   selector: 'bearshark-search-results',
@@ -8,9 +9,30 @@ import { Segment } from './segment';
   styleUrls: [ './search-results.component.css' ]
 })
 
-export class SearchResultsComponent {
+export class SearchResultsComponent implements OnChanges {
 
-    @Input()  segmentsData: Segment[];
-    @Input() sentence: string;
+  detailSegment: Segment;
+  detailsShowing = false;
+  @Input() segments: Segment[];
+  @Input() sentence: string;
 
+  constructor(
+    private searchService: SearchService
+  ) {}
+
+  ngOnChanges() {
+    this.closeDetailView();
+  }
+
+  openDetailView(segmentId: number) {
+    this.searchService.getSegmentDetails(segmentId).then(segment => {
+      this.detailSegment = segment;
+      this.detailsShowing = true;
+    });
+  }
+
+  closeDetailView() {
+    this.detailSegment = null;
+    this.detailsShowing = false;
+  }
 }

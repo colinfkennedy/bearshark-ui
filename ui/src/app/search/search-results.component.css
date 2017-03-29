@@ -1,0 +1,8 @@
+.closeDetailView {
+    float: right;
+}
+
+.closeDetailView .closeImage {
+    width: 20px;
+    height: 20px;
+}

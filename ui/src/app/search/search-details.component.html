@@ -1,7 +1,4 @@
-<div id="detail-view" class="detail-view">
-  <div class="closeDetailView">
-    <img src="assets/img/close.png" class="closeImage"/>
-  </div>
+<div id="detail-view" class="detail-view" *ngIf="segment">
   <div class="detail-header">
     <div class="segment-title">Showing details for: {{ segment.segmentLongName }}</div>
   </div>

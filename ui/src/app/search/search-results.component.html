@@ -1,4 +1,4 @@
-<div class="search-results" ng-show="showSearchResults">
+<div class="search-results" *ngIf="segments && !detailsShowing">
   <div class="sentence">{{sentence}}</div>
   <br/>
   <table class="table table-bordered">
@@ -14,9 +14,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="segment in segmentsData">
-      <td ><a ng-click="vm.showDetailView($index)">{{ segment.segmentLongName }}</a></td>
-      <td>{{ segment.segmentId }}</td>
+    <tr *ngFor="let segment of segments">
+      <td ><a (click)="openDetailView(segment.id)">{{ segment.segmentLongName }}</a></td>
+      <td>{{ segment.id }}</td>
       <td>{{ segment.aceId }}</td>
       <td>{{ segment.impressions }}</td>
       <td>{{ segment.dataRevenue }}</td>
@@ -26,3 +26,7 @@
     </tbody>
   </table>
 </div>
+<div *ngIf="detailsShowing" class="closeDetailView" (click)="closeDetailView()">
+  <img src="/app/core/assets/img/close.png" class="closeImage"/>
+</div>
+<bearshark-search-details [segment]="detailSegment"></bearshark-search-details>

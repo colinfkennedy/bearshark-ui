@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'bear-shark',
   template: `
     <bearshark-nav></bearshark-nav>
-    <bearshark-search></bearshark-search>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent  { name = 'BearShark'; }

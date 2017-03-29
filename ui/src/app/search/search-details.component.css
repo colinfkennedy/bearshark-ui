@@ -5,15 +5,6 @@
     padding-top: 30px;
 }
 
-.detail-view .closeDetailView {
-    float: right;
-}
-
-.detail-view .closeDetailView .closeImage {
-    width: 20px;
-    height: 20px;
-}
-
 .detail-view .detail-header .segment-title {
     text-align: center;
     font-weight: bold;

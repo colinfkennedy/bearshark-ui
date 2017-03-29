@@ -7,14 +7,23 @@ import { Segment } from '../search/segment';
 
 @Injectable()
 export class SearchService {
-  private searchUrl = 'api/search';
+  private searchUrl = 'api/segments';
 
   constructor(private http: Http) { }
 
-  search(): Promise<Segment[]> {
+  search(term: string): Promise<Segment[]> {
     return this.http.get(this.searchUrl)
       .toPromise()
       .then(response => response.json().data as Segment[])
+      .catch(this.handleError);
+  }
+
+  getSegmentDetails(segmentId: number): Promise<Segment> {
+    console.log('Requesting segment details for: ', segmentId);
+    const url = `${this.searchUrl}/${segmentId}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Segment)
       .catch(this.handleError);
   }
 
