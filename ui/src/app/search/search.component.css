@@ -3,6 +3,8 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 145px;
+    padding-bottom: 30px;
+    display: block;
 }
 
 .search-box label {
@@ -13,4 +15,8 @@
     display: inline;
     width: 96%;
     height: 40px;
+}
+
+.search-box.search-results-showing {
+    padding-top: 30px;
 }

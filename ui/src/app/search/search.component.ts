@@ -12,12 +12,14 @@ import { SearchService }  from '../service/search.service';
 export class SearchComponent {
   segments: Segment[];
   sentence = 'Here are the segments we found';
-
+  searchResultsShowing = false;
+  
   constructor(
     private searchService: SearchService
   ) {}
   
   search(term: string): void {
     this.searchService.search(term).then(segments => this.segments = segments);
+    this.searchResultsShowing = true;
   }
 }

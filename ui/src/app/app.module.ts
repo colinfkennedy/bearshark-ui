@@ -6,7 +6,7 @@ import { InMemoryWebApiModule }     from 'angular-in-memory-web-api';
 import { InMemorySegmentsService }  from './service/in-memory-segments.service';
 
 import { AppComponent }             from './app.component';
-import { AppRoutingModule }         from './app-routing.module';
+import { ChartModule }               from './core/chart/chart.module';
 import { CoreModule }               from './core/core.module';
 import { SearchComponent }          from './search/search.component';
 import { SearchDetailsComponent }   from './search/search-details.component';
@@ -15,8 +15,8 @@ import { SearchService }            from './service/search.service';
 
 @NgModule({
   imports:      [
-    AppRoutingModule,
     BrowserModule,
+    ChartModule,
     CoreModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemorySegmentsService)

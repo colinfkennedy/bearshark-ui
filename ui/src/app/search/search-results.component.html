@@ -10,23 +10,23 @@
       <th>Impressions</th>
       <th>Data Revenue</th>
       <th>Revenue</th>
-      <th>Segment Cost - $</th>
+      <th>Segment Cost</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let segment of segments">
       <td ><a (click)="openDetailView(segment.id)">{{ segment.segmentLongName }}</a></td>
-      <td>{{ segment.id }}</td>
-      <td>{{ segment.aceId }}</td>
-      <td>{{ segment.impressions }}</td>
-      <td>{{ segment.dataRevenue }}</td>
-      <td>{{ segment.revenue }}</td>
-      <td>{{ segment.price }}</td>
+      <td>{{segment.id}}</td>
+      <td>{{segment.aceId}}</td>
+      <td>{{segment.impressions}}</td>
+      <td>{{segment.dataRevenue | currency:'USD':true}}</td>
+      <td>{{segment.revenue | currency:'USD':true}}</td>
+      <td>{{segment.price | currency:'USD':true}}</td>
     </tr>
     </tbody>
   </table>
 </div>
-<div *ngIf="detailsShowing" class="closeDetailView" (click)="closeDetailView()">
-  <img src="/app/core/assets/img/close.png" class="closeImage"/>
+<div *ngIf="detailsShowing" class="close-detail-view" (click)="closeDetailView()">
+  <img src="/app/core/assets/img/close.png" class="close-image"/>
 </div>
 <bearshark-search-details [segment]="detailSegment"></bearshark-search-details>

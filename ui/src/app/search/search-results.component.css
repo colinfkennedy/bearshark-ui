@@ -1,8 +1,9 @@
-.closeDetailView {
+.close-detail-view {
     float: right;
+    padding-right: 20px;
 }
 
-.closeDetailView .closeImage {
+.close-detail-view .close-image {
     width: 20px;
     height: 20px;
 }

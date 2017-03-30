@@ -42,6 +42,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.4.2",
     "@types/jasmine": "2.5.36",
     "@types/node": "^6.0.46",
     "canonical-path": "0.0.2",

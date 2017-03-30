@@ -1,21 +1,21 @@
 <div id="detail-view" class="detail-view" *ngIf="segment">
   <div class="detail-header">
-    <div class="segment-title">Showing details for: {{ segment.segmentLongName }}</div>
+    <div class="segment-title">Showing details for: {{segment.segmentLongName}}</div>
   </div>
   <div class="detail-row">
     <div class="pieChart">
-      <canvas id="pieChart" width="100" height="100"></canvas>
+      <chart #pieChart [type]="pieType" [data]="pieData" [options]="pieOptions"></chart>
     </div>
     <div class="lineChart">
-      <canvas id="lineChart" width="100" height="100"></canvas>
+      <chart #lineChart [type]="lineType" [data]="lineData" [options]="lineOptions"></chart>
     </div>
   </div>
   <div class="detail-row">
     <div class="barChart">
-      <canvas id="barChart" width="100" height="100"></canvas>
+      <chart #barChart [type]="barType" [data]="barData" [options]="barOptions"></chart>
     </div>
     <div class="radarChart">
-      <canvas id="radarChart" width="100" height="100"></canvas>
+      <chart #radarChart [type]="radarType" [data]="radarData" [options]="radarOptions"></chart>
     </div>
   </div>
 </div>
