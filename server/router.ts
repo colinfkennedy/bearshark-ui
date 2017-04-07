@@ -14,6 +14,7 @@ export class AppRouter {
 
   configure(): void {
     this.router.post('/search', this.searchAndRescueController.search);
+    this.router.post('/getSegmentDetails', this.searchAndRescueController.getSegmentDetails);
   }
 
   getRouter(): Router {

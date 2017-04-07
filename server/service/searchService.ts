@@ -17,7 +17,7 @@ export class SearchService {
 
     return rp(options)
       .then(parsedBody => {
-        return parsedBody
+        return parsedBody;
       })
       .catch(
         function (err) {

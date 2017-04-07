@@ -2,9 +2,6 @@ import { NgModule }                 from '@angular/core';
 import { BrowserModule }            from '@angular/platform-browser';
 import { HttpModule }               from '@angular/http';
 
-import { InMemoryWebApiModule }     from 'angular-in-memory-web-api';
-import { InMemorySegmentsService }  from './service/in-memory-segments.service';
-
 import { AppComponent }             from './app.component';
 import { ChartModule }               from './core/chart/chart.module';
 import { CoreModule }               from './core/core.module';
@@ -18,8 +15,7 @@ import { SearchService }            from './service/search.service';
     BrowserModule,
     ChartModule,
     CoreModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemorySegmentsService)
+    HttpModule
   ],
   declarations: [
     AppComponent,
