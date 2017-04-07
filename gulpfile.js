@@ -13,10 +13,15 @@ gulp.task('ts:server', function() {
 });
 
 gulp.task('ts:ui', function() {
-  return typescript('ui', 'ui');
+  return typescript('ui/src', 'ui');
 });
 
 gulp.task('ts', ['ts:ui', 'ts:server']);
+
+gulp.task('copy-ui', function() {
+  gulp.src(['ui/src/**/*', '!ui/src/**/*.ts', '!ui/src/main.less', '!ui/src/**/*.json', '!ui/src/**/*.spec.js'])
+    .pipe(gulp.dest('dist/ui'));
+})
 
 gulp.task('watch:ui', () => {
   gulp.watch('ui/src/**/*.ts', ['ts:ui']);
@@ -35,7 +40,7 @@ gulp.task('watch:less', () => {
 });
 
 /* Main build files */
-gulp.task('build', ['ts', 'less']);
+gulp.task('build', ['ts', 'less', 'copy-ui']);
 
 gulp.task('build:watch', ['watch:ui', 'watch:less']);
 
@@ -43,7 +48,7 @@ gulp.task('build:watch', ['watch:ui', 'watch:less']);
 function typescript(source, destination) {
   return gulp.src(`${source}/**/*.ts`)
     .pipe(ts(_.extend(tsconfig.compilerOptions, {
-      outDir: `${destination}`,
+      outDir: `dist/${destination}`,
     })))
-    .js.pipe(gulp.dest(`${destination}/`));
+    .js.pipe(gulp.dest(`dist/${destination}/`));
 }
